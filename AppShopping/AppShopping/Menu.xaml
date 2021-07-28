@@ -4,7 +4,25 @@
        xmlns:views="clr-namespace:AppShopping.Views"
              x:Class="AppShopping.Menu">
 
-    <!-- Menu inferior -->
+    <Shell.FlyoutHeader>
+        <!-- 
+        Temos "1*" e "2*" ou seja 1 + 2 = 3; então, um elemento irá ocupar 1/3 do espaço, e o outro 2/3 
+        RowDefinitions="Auto, Auto" -> deixamos a linha no automático nesse momento.
+        -->
+        <Grid Margin="0 ,25" ColumnDefinitions="1*, 2*" RowDefinitions="Auto, Auto">
+            <!-- Grid.RowSpan="2" = é para deixar o elemento pegando a primeira e a segunda linha ao mesmo tempo -->
+            <Image Source="BagWhite" Grid.RowSpan="2"></Image>
+            
+            <!-- A coluna e a linha começam no índice 0
+            Grid.Column="1" = estamos informando que a label e a imagem estão na coluna 1
+             Grid.Row="1" estamos informando que a imagem está na linha 1
+            HorizontalOptions="Start" -> estamos informando que o elemento fica no início (start) -->
+            <Label Text="Bem-vindo! ao" Grid.Column="1" Style="{StaticResource MenuHeaderLabel}"></Label>
+            <Image Source="LogoWhite" HorizontalOptions="Start" Grid.Column="1" Grid.Row="1"></Image>
+        </Grid>
+    </Shell.FlyoutHeader>
+    
+    <!-- Menu inferior e lateral -->
     <FlyoutItem Title="Principais" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="Lojas" Icon="MenuIconStore" ContentTemplate="{DataTemplate views:Lojas}"></ShellContent>
         <ShellContent Title="Restaurantes" Icon="MenuIconRestaurant" ContentTemplate="{DataTemplate views:Lojas}"></ShellContent>

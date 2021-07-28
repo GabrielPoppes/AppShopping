@@ -4,5 +4,16 @@
              x:Class="AppShopping.App">
     <Application.Resources>
 
+        <ResourceDictionary>
+            <!-- Estilo chamado MenuHeaderLabel com seus atributos do estilo -->
+            <Style TargetType="Label" x:Key="MenuHeaderLabel">
+                <Setter Property="FontFamily" Value="MontserratBold"></Setter>
+                <Setter Property="FontSize" Value="12"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+            </Style>
+        </ResourceDictionary>
+
     </Application.Resources>
 </Application>
+    
+    
