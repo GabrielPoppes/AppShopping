@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:AppShopping.Views"
+             x:Class="AppShopping.Menu">
+
+    <!-- Menu inferior -->
+    <FlyoutItem Title="Principais" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Lojas" Icon="MenuIconStore" ContentTemplate="{DataTemplate views:Lojas}"></ShellContent>
+        <ShellContent Title="Restaurantes" Icon="MenuIconRestaurant" ContentTemplate="{DataTemplate views:Lojas}"></ShellContent>
+        <ShellContent Title="Cinema" Icon="MenuIconCinema" ContentTemplate="{DataTemplate views:Lojas}"></ShellContent>
+        <ShellContent Title="Ticket" Icon="MenuIconTicket" ContentTemplate="{DataTemplate views:Lojas}"></ShellContent>
+    </FlyoutItem>
+
+    <!-- Menu lateral -->
+    <ShellContent Title="Novidades" Icon="MenuIconNews" ContentTemplate="{DataTemplate views:Lojas}"></ShellContent>
+    <ShellContent Title="Como chegar" Icon="MenuIconMaps" ContentTemplate="{DataTemplate views:Lojas}"></ShellContent>
+    <ShellContent Title="Wifi" Icon="MenuIconWifi" ContentTemplate="{DataTemplate views:Lojas}"></ShellContent>
+
+</Shell>
+    
