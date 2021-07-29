@@ -14,6 +14,13 @@
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
     <!--<item name="colorAccent">#FF4081</item>-->
+
+	  <!-- Alterando cor da barra de status de azul para branca-->
+	  <item name="android:statusBarColor">#FFFFFF</item>
+
+	  <!-- Como colocamos a cor da barra branca, deixamos o LightStatusBar como true
+	  para que o sistema adote um texto mais contrastado (mais escuro) e apareça no branco-->
+	  <item name="android:windowLightStatusBar">true</item>
   </style>
 
 	<style name="MainTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
