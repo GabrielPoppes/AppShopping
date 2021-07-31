@@ -1,12 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:AppShopping.ViewModels"
              x:Class="AppShopping.Views.Lojas">
+
+    <ContentPage.BindingContext>
+        <viewModels:StoresViewModel></viewModels:StoresViewModel>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Lojas!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <!-- Campo de pesquisa
+            Chamando o método que criamos SearchWord -->
+            <Entry Text="{Binding SearchWord}" Placeholder="Pesquisa"></Entry>
+            <!-- Botão OK
+            Chamando o método que criamos SearchCommand-->
+            <Button Command="{Binding SearchCommand}" Text="OK"></Button>
+            
+            
+            <CollectionView ItemsSource="{Binding Establishments}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Name}"></Label>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
