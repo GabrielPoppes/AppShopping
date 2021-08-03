@@ -15,13 +15,24 @@
          which is used to tint widgets -->
     <!--<item name="colorAccent">#FF4081</item>-->
 
+	  <!-- Alterando a cor da barra de pesquisa quando clicada -->
+	  <item name="colorAccent">#F86237</item>
+	  
 	  <!-- Alterando cor da barra de status de azul para branca-->
 	  <item name="android:statusBarColor">#FFFFFF</item>
 
 	  <!-- Como colocamos a cor da barra branca, deixamos o LightStatusBar como true
 	  para que o sistema adote um texto mais contrastado (mais escuro) e apareça no branco-->
 	  <item name="android:windowLightStatusBar">true</item>
+
+	  <!-- Alterando a cor da barra do campo de pesquisa quando clicada para transparente -->
+	  <item name="android:editTextStyle">@style/MainTheme.EditText</item>
   </style>
+
+	<!-- Estilo da barra -->
+	<style name="MainTheme.EditText" parent="@android:style/Widget.EditText">
+		<item name="android:background">@android:color/transparent</item>
+	</style>
 
 	<style name="MainTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
 		<item name="android:windowBackground">@drawable/splashscreen</item>

@@ -18,7 +18,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Grid ColumnDefinitions="*, 70" RowDefinitions="50" Margin="10, 0">
-                <Frame Padding="0" HasShadow="False" BorderColor="{StaticResource BorderColor}" CornerRadius="0">
+                <Frame Padding="10, 0" HasShadow="False" BorderColor="{StaticResource BorderColor}" CornerRadius="0">
                     <Entry Text="{Binding SearchWord}" Placeholder="Pesquisa"></Entry> <!-- Campo de pesquisa: Chamando o método que criamos SearchWord -->
                 </Frame>
 
