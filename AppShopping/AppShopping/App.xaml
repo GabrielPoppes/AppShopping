@@ -51,6 +51,7 @@
 
             <!-- Quando usamos o BasedOn nós herdamos todas as características do estilo FlyoutBaseStyle-->
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource FlyoutBaseStyle}"></Style>
+            <Style TargetType="ShellContent" BasedOn="{StaticResource FlyoutBaseStyle}"></Style>
         
             <!-- Estilo chamado MenuHeaderLabel com seus atributos do estilo -->
              <Style TargetType="Label" x:Key="MenuHeaderLabel">
@@ -59,6 +60,7 @@
             <Setter Property="TextColor" Value="{StaticResource White}"></Setter>
             </Style>
 
+            <!-- Estilo para o botão da barra de pesquisa -->
             <Style TargetType="Button" x:Key="PrimaryButton">
                 <Setter Property="FontFamily" Value="MontserratRegular"></Setter>
                 <Setter Property="FontSize" Value="18"></Setter>
@@ -69,16 +71,37 @@
                 <Setter Property="BorderWidth" Value="1"></Setter>
             </Style>
 
+            <!-- Estilo o nome dos estabelecimentos -->
             <Style TargetType="Label" x:Key="NameEstablishment">
                 <Setter Property="FontFamily" Value="MontserratRegular"></Setter>
                 <Setter Property="FontSize" Value="14"></Setter>
                 <Setter Property="TextColor" Value="Black"></Setter>
             </Style>
 
+            <!-- Estilo para a descrição dos estabelecimentos -->
             <Style TargetType="Label" x:Key="DescriptionEstablishment">
                 <Setter Property="FontFamily" Value="MontserratLight"></Setter>
                 <Setter Property="FontSize" Value="12"></Setter>
                 <Setter Property="TextColor" Value="{StaticResource TextSecondColor}"></Setter>
+            </Style>
+            
+            <Style TargetType="Label" x:Key="TitleType">
+                <Setter Property="FontFamily" Value="MontserratRegular"></Setter>
+                <Setter Property="FontSize" Value="24"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource Black}"></Setter>
+            </Style>
+
+            <Style TargetType="Label" x:Key="TitleName">
+                <Setter Property="FontFamily" Value="MontserratRegular"></Setter>
+                <Setter Property="FontSize" Value="36"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource PrimaryColor}"></Setter>
+                <Setter Property="Margin" Value="0, -5, 0, 0"></Setter>
+            </Style>
+
+            <Style TargetType="Label" x:Key="Subtitle">
+                <Setter Property="FontFamily" Value="MontserratSemibold"></Setter>
+                <Setter Property="FontSize" Value="14"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource Black}"></Setter>
             </Style>
 
         </ResourceDictionary>
