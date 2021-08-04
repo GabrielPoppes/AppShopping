@@ -24,6 +24,7 @@
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
+        <ScrollView>
         <!-- StackLayout -->
         <StackLayout Spacing="0" Padding="20">
             <Label Text="{Binding Establishment.Tipo, Converter={StaticResource EstablishmentTypeConverter}}}" Style="{StaticResource TitleType}"></Label> <!-- Usado o conversor -->
@@ -47,5 +48,6 @@
                 </Grid>
             </Frame>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

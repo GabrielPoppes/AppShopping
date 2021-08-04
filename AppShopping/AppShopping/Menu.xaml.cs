@@ -15,6 +15,12 @@ namespace AppShopping
         public Menu()
         {
             InitializeComponent();
+
+            /* Aqui registramos uma rota que leva para a tela de detalhes dos estabelecimentos
+             * A rota ficou: establishment/detail
+             * E a página é a "EstablishmentDetail" que fica na pasta "Views"
+             */
+            Routing.RegisterRoute("establishment/detail", typeof(Views.EstablishmentDetail));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AppShopping.Libraries.Helpers.MVVM;
 using AppShopping.Models;
 using AppShopping.Services;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,15 +29,20 @@ namespace AppShopping.ViewModels
         } 
         private List<Estabilishment> _allEstablishments; // Lista para receber todas as lojas
 
+        public ICommand DetailCommand { get; set; } // Propriedade do tipo ICommand chamada DetailCommand
 
-        /* Todas esses propriedades acima por padrão são nulas, então, vamos criar as instâncias
-         tirando a SearchWord, já que é somente a digitação do usuário (não tem erro).
-        já o botão OK por exemplo, precisa de uma instância para saber o que ele vai fazer quando for acionado.
-        Vamos criar as instâncias do botão OK
-         */
+        private void Detail(Estabilishment estabilishment) // Método que vai nos levar até a tela de Detalhes
+        {
+            string establishmentSerialized = JsonConvert.SerializeObject(estabilishment); // Criamos uma string para receber o estabelecimento
+            Shell.Current.GoToAsync($"establishment/detail?establishmentSerialized={Uri.EscapeDataString(establishmentSerialized)}"); // rota de navegação que criamos
+
+        }
+
         public StoresViewModel()
         {
             SearchCommand = new Command(Search); // Quando clicar no botão, chama o método Search
+            DetailCommand = new Command<Estabilishment>(Detail); // Chamar a tela de detalhe
+
             var allEstablishment = new EstablishmentService().GetEstabilishments(); // Var recebendo todos os estabelecimentos
             var allStores = allEstablishment.Where(a => a.Tipo == Libraries.Enums.EstablishmentType.Store).ToList(); // Var filtrando somente os estabelecimentos do tipo Store (loja)
             Establishments = allStores;            
